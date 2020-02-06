@@ -54,7 +54,6 @@ module.exports = function(app) {
           var otherOtherObject = {
             events: acceptedJobs
           };
-          console.log("in customer page");
           res.render("customer-home", {customer: hbsObject, vendor: otherObject, accepted: otherOtherObject});
         });
        
@@ -94,7 +93,6 @@ module.exports = function(app) {
             vendorid: req.params.id
           }
         }).then(function(userData) {
-          console.log(userData.name);
           var vendorInfo = {
             vendor: userData
           };
@@ -107,7 +105,6 @@ module.exports = function(app) {
             var pendingEvents = {
               pendingCurrent: vendorEventData
             };
-            console.log(pendingEvents);
             res.render("vendor-home", {
               accepted: acceptedEvents, 
               available: nullVendorEvents, 

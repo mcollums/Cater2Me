@@ -12,8 +12,6 @@ module.exports = function (app) {
   app.put("/api/event/:eventid/:vendorid", function (req, res) {
     newEventVendor = req.params.vendorid;
     selectedEvent = req.params.eventid;
-    console.log("NEW EVENT VENDOR IN POST: " + newEventVendor);
-    console.log("SELECTED EVENT IN POST: " + selectedEvent);
   
     db.Events.update(
       { vendorid : newEventVendor },
