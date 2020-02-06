@@ -33,17 +33,19 @@ Catering is a niche industry that most consumers don't have experience with unti
 <h2 style="text-align: center;">Technology</h2>
 
 <ul>
-<li>Javascript</li>
-<li>MySQL/Sequelize</li>
-<li>Node.js</li>
-<li>Handlebars</li>
-<li>Passport.js</li>
-<li>Bootstrap</li>
-<li>HTML/CSS</li>
+ <li>Javascript</li>
+ <li>MySQL/Sequelize</li>
+ <li>Node.js</li>
+ <li>Handlebars</li>
+ <li>Passport.js</li>
+ <li>Bootstrap</li>
+ <li>HTML/CSS</li>
 </ul>
 
 Deployment was done with [Heroku](https://devcenter.heroku.com/articles/pipelines) pipeline development and git hub for staging prior to it being pushed to the Heroku pipeline.
 
+<h2> Screenshots </h2>
+![]()
 
 <h2> Contributors </h2>
 <ul>
