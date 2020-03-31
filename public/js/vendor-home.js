@@ -1,6 +1,5 @@
 $("#size").hide();
 $("#state").hide();
-// var vendorID = $(".vendorInfo").attr()
 var placeArray = (window.location.pathname).split("/");
 var vendorId = placeArray.slice(-1)[0];
 
@@ -17,9 +16,6 @@ $(".vendorAcceptBtn").on("click", function () {
     eventid: eventId
   };
 
-  console.log("VENDOR ID: " + vendorId);
-  console.log("EVENT ID: " + eventId);
-
   $.ajax("/api/event/" + eventId + "/" + vendorId, {
     type: "PUT",
     data: eventUpdate
@@ -29,16 +25,15 @@ $(".vendorAcceptBtn").on("click", function () {
 });
 
 // IF THE MORE INFO BUTTON IS CLICKED
+// grab the data-id attr and change the window location to match
+// /event/btnID/vendorID
 $(".moreInfoBtn").on("click", function () {
-  console.log("I've been clicked");
   var btnID = ($(this).attr("data-id"));
-  console.log(btnID);
   window.location.href = "/event/" + btnID +"/"+ vendorId;
 });
 
 // SEARCH INPUTS 
 $("#category").on("change", function () {
-  console.log($("#category").val());
   if ($("#category").val() === "size") {
     $("#size").show();
     $("#state").hide();
