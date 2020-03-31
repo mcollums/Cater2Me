@@ -1,6 +1,5 @@
 var db = require("../models");
 var passport = require("../config/passport");
-// var passportVendor = require("../config/passportVendor");
 var Sequelize = require("sequelize");
 var Op = Sequelize.Op;
 
@@ -106,7 +105,6 @@ module.exports = function(app) {
             vendorid: req.params.vendorid
           }
         }).then(function(userData) {
-          console.log(userData.name);
           var vendorInfo = {
             vendor: userData
           };
@@ -142,7 +140,6 @@ module.exports = function(app) {
             vendorid: req.params.vendorid
           }
         }).then(function(userData) {
-          console.log(userData.name);
           var vendorInfo = {
             vendor: userData
           };
@@ -157,7 +154,8 @@ module.exports = function(app) {
 
   //getting event and editing it
   app.post("/api/event/edit/:id", function(req, res){
-    db.Events.update({name: req.body.name,
+    db.Events.update({
+      name: req.body.name,
       phone: req.body.phone,
       city: req.body.city,
       state: req.body.state,
@@ -169,10 +167,14 @@ module.exports = function(app) {
       decor: req.body.decor,
       date: req.body.date,
       time: req.body.time,
-      comments: req.body.comments},{ where : { eventid : req.params.id }}).then(function(){
+      comments: req.body.comments
+    },
+    { 
+      where : { eventid : req.params.id }
+    }
+    ).then(function(){
       res.redirect("/customer");
     });
-   
   });
   
   //api to decline an event
